@@ -140,10 +140,29 @@ end)
 local LibName = tostring(math.random(1, 100))..tostring(math.random(1,50))..tostring(math.random(1, 100))
 
 function Kavo:ToggleUI()
-    if game.CoreGui[LibName].Enabled then
-        game.CoreGui[LibName].Enabled = false
+    local thingy = game.CoreGui[LibName]
+    if thingy.Enabled then   
+        game.TweenService:Create(thingy.Main.MainHeader.close, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            ImageTransparency = 1
+        }):Play()
+        wait()
+        game.TweenService:Create(thingy.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+			Size = UDim2.new(0,0,0,0),
+			Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X / 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y / 2))
+		}):Play()
+        task.wait(1)
+        thingy.Enabled = false
     else
-        game.CoreGui[LibName].Enabled = true
+        thingy.Enabled = true
+        task.wait()
+        game.TweenService:Create(thingy.Main.MainHeader.close, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            ImageTransparency = 0
+        }):Play()
+        wait()
+        game.TweenService:Create(thingy.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+			Size = UDim2.new(0, 525, 0, 318),
+			Position = UDim2.new(0, Main.AbsolutePosition.X - (Main.AbsoluteSize.X * 2), 0, Main.AbsolutePosition.Y - (Main.AbsoluteSize.Y * 2))
+		}):Play()
     end
 end
 
@@ -293,35 +312,6 @@ function Kavo.CreateLib(kavName, themeList)
         ScreenGui.Enabled = false
     end)
 
-    game:GetService("UserInputService").InputBegan:connect(function(input, ok)
-        if not ok then
-            if input == Enum.KeyCode.RightShift then
-                if ScreenGui.Enabled then
-                    game.TweenService:Create(close, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-                        ImageTransparency = 1
-                    }):Play()
-                    wait()
-                    game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-                        Size = UDim2.new(0,0,0,0),
-                        Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X / 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y / 2))
-                    }):Play()
-                    wait(1)
-                    ScreenGui.Enabled = false
-                else
-                    ScreenGui.Enabled = true
-                    task.wait()
-                    game.TweenService:Create(close, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-                        ImageTransparency = 0
-                    }):Play()
-                    wait()
-                    game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-                        Size = UDim2.new(0, 525, 0, 318),
-                        Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X * 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y * 2))
-                    }):Play()
-                end
-            end
-        end
-    end)
     MainSide.Name = "MainSide"
     MainSide.Parent = Main
     MainSide.BackgroundColor3 = themeList.Header
@@ -1875,7 +1865,7 @@ function Kavo.CreateLib(kavName, themeList)
                 keybindElement.Text = ""
                 keybindElement.TextColor3 = Color3.fromRGB(0, 0, 0)
                 keybindElement.TextSize = 14.000
-                keybindElement.MouseButton1Click:connect(function(e) 
+                keybindElement.MouseButton1Click:Connect(function(e) 
                     if not focusing then
                         togName_2.Text = ". . ."
                         local a, b = game:GetService('UserInputService').InputBegan:wait();
@@ -1907,7 +1897,7 @@ function Kavo.CreateLib(kavName, themeList)
                     end
                 end)
         
-                game:GetService("UserInputService").InputBegan:connect(function(current, ok) 
+                game:GetService("UserInputService").InputBegan:Connect(function(current, ok) 
                     if not ok then 
                         if current.KeyCode.Name == oldKey then 
                             callback()
@@ -2472,9 +2462,9 @@ function Kavo.CreateLib(kavName, themeList)
 
                 onrainbow.MouseButton1Click:Connect(togglerainbow)
                 --
-                mouse.Move:connect(cp)
-                rgb.MouseButton1Down:connect(function()colorpicker=true end)
-                dark.MouseButton1Down:connect(function()darknesss=true end)
+                mouse.Move:Connect(cp)
+                rgb.MouseButton1Down:Connect(function()colorpicker=true end)
+                dark.MouseButton1Down:Connect(function()darknesss=true end)
                 uis.InputEnded:Connect(function(input)
                     if input.UserInputType.Name == 'MouseButton1' then
                         if darknesss then darknesss = false end
