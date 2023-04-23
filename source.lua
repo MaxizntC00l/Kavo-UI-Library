@@ -611,6 +611,7 @@ function Kavo.CreateLib(kavName, themeList)
                 viewInfo.Size = UDim2.new(0, 23, 0, 23)
                 viewInfo.ZIndex = 2
                 viewInfo.Image = "rbxassetid://3926305904"
+                viewInfo.ImageTransparency = 1
                 viewInfo.ImageColor3 = themeList.SchemeColor
                 Objects[viewInfo] = "ImageColor3"
                 viewInfo.ImageRectOffset = Vector2.new(764, 764)
@@ -786,6 +787,7 @@ function Kavo.CreateLib(kavName, themeList)
                 viewInfo.Size = UDim2.new(0, 23, 0, 23)
                 viewInfo.ZIndex = 2
                 viewInfo.Image = "rbxassetid://3926305904"
+                viewInfo.ImageTransparency = 1
                 viewInfo.ImageColor3 = themeList.SchemeColor
                 viewInfo.ImageRectOffset = Vector2.new(764, 764)
                 viewInfo.ImageRectSize = Vector2.new(36, 36)
@@ -1002,6 +1004,7 @@ function Kavo.CreateLib(kavName, themeList)
                     viewInfo.Size = UDim2.new(0, 23, 0, 23)
                     viewInfo.ZIndex = 2
                     viewInfo.Image = "rbxassetid://3926305904"
+                    viewInfo.ImageTransparency = 1
                     viewInfo.ImageColor3 = themeList.SchemeColor
                     viewInfo.ImageRectOffset = Vector2.new(764, 764)
                     viewInfo.ImageRectSize = Vector2.new(36, 36)
@@ -1212,6 +1215,7 @@ function Kavo.CreateLib(kavName, themeList)
                 viewInfo.Size = UDim2.new(0, 23, 0, 23)
                 viewInfo.ZIndex = 2
                 viewInfo.Image = "rbxassetid://3926305904"
+                viewInfo.ImageTransparency = 1
                 viewInfo.ImageColor3 = themeList.SchemeColor
                 viewInfo.ImageRectOffset = Vector2.new(764, 764)
                 viewInfo.ImageRectSize = Vector2.new(36, 36)
@@ -1517,6 +1521,7 @@ function Kavo.CreateLib(kavName, themeList)
                 viewInfo.Size = UDim2.new(0, 23, 0, 23)
                 viewInfo.ZIndex = 2
                 viewInfo.Image = "rbxassetid://3926305904"
+                viewInfo.ImageTransparency = 1
                 viewInfo.ImageColor3 = themeList.SchemeColor
                 viewInfo.ImageRectOffset = Vector2.new(764, 764)
                 viewInfo.ImageRectSize = Vector2.new(36, 36)
@@ -1921,6 +1926,7 @@ function Kavo.CreateLib(kavName, themeList)
                 viewInfo.Size = UDim2.new(0, 23, 0, 23)
                 viewInfo.ZIndex = 2
                 viewInfo.Image = "rbxassetid://3926305904"
+                viewInfo.ImageTransparency = 1
                 viewInfo.ImageColor3 = themeList.SchemeColor
                 viewInfo.ImageRectOffset = Vector2.new(764, 764)
                 viewInfo.ImageRectSize = Vector2.new(36, 36)  
@@ -2172,6 +2178,7 @@ function Kavo.CreateLib(kavName, themeList)
                 viewInfo.Size = UDim2.new(0, 23, 0, 23)
                 viewInfo.ZIndex = 2
                 viewInfo.Image = "rbxassetid://3926305904"
+                viewInfo.ImageTransparency = 1
                 viewInfo.ImageColor3 = themeList.SchemeColor
                 viewInfo.ImageRectOffset = Vector2.new(764, 764)
                 viewInfo.ImageRectSize = Vector2.new(36, 36) 
