@@ -161,7 +161,7 @@ function Kavo:ToggleUI()
         wait()
         tween:Create(thingy.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 			Size = UDim2.new(0, 525, 0, 318),
-			Position = UDim2.new(0, thingy.Main.AbsolutePosition.X + (thingy.Main.AbsoluteSize.X * 2), 0, thingy.Main.AbsolutePosition.Y + (thingy.Main.AbsoluteSize.Y * 2))
+			Position = UDim2.new(0, thingy.Main.AbsolutePosition.X + (thingy.Main.AbsoluteSize.X / 2), 0, thingy.Main.AbsolutePosition.Y + (thingy.Main.AbsoluteSize.Y / 2))
 		}):Play()
     end
 end
