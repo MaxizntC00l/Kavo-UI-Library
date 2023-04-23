@@ -147,6 +147,8 @@ function Kavo:ToggleUI()
     end
 end
 
+function Kavo:GetName() return LibName end
+
 function Kavo.CreateLib(kavName, themeList)
     if not themeList then
         themeList = themes
@@ -291,6 +293,34 @@ function Kavo.CreateLib(kavName, themeList)
         ScreenGui.Enabled = false
     end)
 
+    game:GetService("UserInputService").InputBegan:connect(function(input, ok)
+        if ok then return end
+        if input == Enum.KeyCode.RightShift then
+            if ScreenGui.Enabled then
+                game.TweenService:Create(close, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                    ImageTransparency = 1
+                }):Play()
+                wait()
+                game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+                    Size = UDim2.new(0,0,0,0),
+                    Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X / 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y / 2))
+                }):Play()
+                wait(1)
+                ScreenGui.Enabled = false
+            else
+                ScreenGui.Enabled = true
+                task.wait()
+                game.TweenService:Create(close, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                    ImageTransparency = 0
+                }):Play()
+                wait()
+                game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+                    Size = UDim2.new(0, 525, 0, 318),
+                    Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X * 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y * 2))
+                }):Play()
+            end
+        end
+    end)
     MainSide.Name = "MainSide"
     MainSide.Parent = Main
     MainSide.BackgroundColor3 = themeList.Header
