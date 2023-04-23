@@ -605,7 +605,6 @@ function Kavo.CreateLib(kavName, themeList)
                 UICorner.Parent = buttonElement
 
                 viewInfo.Name = "viewInfo"
-                viewInfo.Parent = buttonElement
                 viewInfo.BackgroundTransparency = 1.000
                 viewInfo.LayoutOrder = 9
                 viewInfo.Position = UDim2.new(0.930000007, 0, 0.151999995, 0)
@@ -734,26 +733,6 @@ function Kavo.CreateLib(kavName, themeList)
                         hovering = false
                     end
                 end)
-                viewInfo.MouseButton1Click:Connect(function()
-                    if not viewDe then
-                        viewDe = true
-                        focusing = true
-                        for i,v in next, infoContainer:GetChildren() do
-                            if v ~= moreInfo then
-                                Utility:TweenObject(v, {Position = UDim2.new(0,0,2,0)}, 0.2)
-                            end
-                        end
-                        Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,0,0)}, 0.2)
-                        Utility:TweenObject(blurFrame, {BackgroundTransparency = 0.5}, 0.2)
-                        Utility:TweenObject(btn, {BackgroundColor3 = themeList.ElementColor}, 0.2)
-                        wait(1.5)
-                        focusing = false
-                        Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,2,0)}, 0.2)
-                        Utility:TweenObject(blurFrame, {BackgroundTransparency = 1}, 0.2)
-                        wait(0)
-                        viewDe = false
-                    end
-                end)
                 coroutine.wrap(function()
                     while wait() do
                         if not hovering then
@@ -801,7 +780,6 @@ function Kavo.CreateLib(kavName, themeList)
                 UICorner.Parent = textboxElement
 
                 viewInfo.Name = "viewInfo"
-                viewInfo.Parent = textboxElement
                 viewInfo.BackgroundTransparency = 1.000
                 viewInfo.LayoutOrder = 9
                 viewInfo.Position = UDim2.new(0.930000007, 0, 0.151999995, 0)
@@ -933,26 +911,7 @@ function Kavo.CreateLib(kavName, themeList)
                     end
                 end)
 
-                viewInfo.MouseButton1Click:Connect(function()
-                    if not viewDe then
-                        viewDe = true
-                        focusing = true
-                        for i,v in next, infoContainer:GetChildren() do
-                            if v ~= moreInfo then
-                                Utility:TweenObject(v, {Position = UDim2.new(0,0,2,0)}, 0.2)
-                            end
-                        end
-                        Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,0,0)}, 0.2)
-                        Utility:TweenObject(blurFrame, {BackgroundTransparency = 0.5}, 0.2)
-                        Utility:TweenObject(btn, {BackgroundColor3 = themeList.ElementColor}, 0.2)
-                        wait(1.5)
-                        focusing = false
-                        Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,2,0)}, 0.2)
-                        Utility:TweenObject(blurFrame, {BackgroundTransparency = 1}, 0.2)
-                        wait(0)
-                        viewDe = false
-                    end
-                end)
+
                 coroutine.wrap(function()
                     while wait() do
                         if not hovering then
@@ -1037,7 +996,6 @@ function Kavo.CreateLib(kavName, themeList)
                     togName.TextXAlignment = Enum.TextXAlignment.Left
 
                     viewInfo.Name = "viewInfo"
-                    viewInfo.Parent = toggleElement
                     viewInfo.BackgroundTransparency = 1.000
                     viewInfo.LayoutOrder = 9
                     viewInfo.Position = UDim2.new(0.930000007, 0, 0.151999995, 0)
@@ -1177,26 +1135,7 @@ function Kavo.CreateLib(kavName, themeList)
                             moreInfo.TextColor3 = themeList.TextColor
                         end
                     end)()
-                    viewInfo.MouseButton1Click:Connect(function()
-                        if not viewDe then
-                            viewDe = true
-                            focusing = true
-                            for i,v in next, infoContainer:GetChildren() do
-                                if v ~= moreInfo then
-                                    Utility:TweenObject(v, {Position = UDim2.new(0,0,2,0)}, 0.2)
-                                end
-                            end
-                            Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,0,0)}, 0.2)
-                            Utility:TweenObject(blurFrame, {BackgroundTransparency = 0.5}, 0.2)
-                            Utility:TweenObject(btn, {BackgroundColor3 = themeList.ElementColor}, 0.2)
-                            wait(1.5)
-                            focusing = false
-                            Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,2,0)}, 0.2)
-                            Utility:TweenObject(blurFrame, {BackgroundTransparency = 1}, 0.2)
-                            wait(0)
-                            viewDe = false
-                        end
-                    end)
+
                     function TogFunction:UpdateToggle(newText, isTogOn)
                         isTogOn = isTogOn or toggle
                         if newText ~= nil then 
@@ -1267,7 +1206,6 @@ function Kavo.CreateLib(kavName, themeList)
                 togName.TextXAlignment = Enum.TextXAlignment.Left
 
                 viewInfo.Name = "viewInfo"
-                viewInfo.Parent = sliderElement
                 viewInfo.BackgroundTransparency = 1.000
                 viewInfo.LayoutOrder = 9
                 viewInfo.Position = UDim2.new(0.930000007, 0, 0.151999995, 0)
@@ -1440,27 +1378,7 @@ function Kavo.CreateLib(kavName, themeList)
                         end
                         Utility:TweenObject(blurFrame, {BackgroundTransparency = 1}, 0.2)
                     end
-                end)
-                viewInfo.MouseButton1Click:Connect(function()
-                    if not viewDe then
-                        viewDe = true
-                        focusing = true
-                        for i,v in next, infoContainer:GetChildren() do
-                            if v ~= moreInfo then
-                                Utility:TweenObject(v, {Position = UDim2.new(0,0,2,0)}, 0.2)
-                            end
-                        end
-                        Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,0,0)}, 0.2)
-                        Utility:TweenObject(blurFrame, {BackgroundTransparency = 0.5}, 0.2)
-                        Utility:TweenObject(btn, {BackgroundColor3 = themeList.ElementColor}, 0.2)
-                        wait(1.5)
-                        focusing = false
-                        Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,2,0)}, 0.2)
-                        Utility:TweenObject(blurFrame, {BackgroundTransparency = 1}, 0.2)
-                        wait(0)
-                        viewDe = false
-                    end
-                end)        
+                end)   
             end
 
             function Elements:NewDropdown(dropname, dropinf, list, callback)
@@ -1593,7 +1511,6 @@ function Kavo.CreateLib(kavName, themeList)
                 itemTextbox.TextXAlignment = Enum.TextXAlignment.Left
 
                 viewInfo.Name = "viewInfo"
-                viewInfo.Parent = dropOpen
                 viewInfo.BackgroundTransparency = 1.000
                 viewInfo.LayoutOrder = 9
                 viewInfo.Position = UDim2.new(0.930000007, 0, 0.151999995, 0)
@@ -1683,28 +1600,7 @@ function Kavo.CreateLib(kavName, themeList)
                 end 
                 if themeList.SchemeColor == Color3.fromRGB(0,0,0) then
                     Utility:TweenObject(moreInfo, {TextColor3 = Color3.fromRGB(255,255,255)}, 0.2)
-                end 
-
-                viewInfo.MouseButton1Click:Connect(function()
-                    if not viewDe then
-                        viewDe = true
-                        focusing = true
-                        for i,v in next, infoContainer:GetChildren() do
-                            if v ~= moreInfo then
-                                Utility:TweenObject(v, {Position = UDim2.new(0,0,2,0)}, 0.2)
-                            end
-                        end
-                        Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,0,0)}, 0.2)
-                        Utility:TweenObject(blurFrame, {BackgroundTransparency = 0.5}, 0.2)
-                        Utility:TweenObject(btn, {BackgroundColor3 = themeList.ElementColor}, 0.2)
-                        wait(1.5)
-                        focusing = false
-                        Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,2,0)}, 0.2)
-                        Utility:TweenObject(blurFrame, {BackgroundTransparency = 1}, 0.2)
-                        wait(0)
-                        viewDe = false
-                    end
-                end)     
+                end    
 
                 for i,v in next, list do
                     local optionSelect = Instance.new("TextButton")
@@ -2019,7 +1915,6 @@ function Kavo.CreateLib(kavName, themeList)
                 togName.TextXAlignment = Enum.TextXAlignment.Left
 
                 viewInfo.Name = "viewInfo"
-                viewInfo.Parent = keybindElement
                 viewInfo.BackgroundTransparency = 1.000
                 viewInfo.LayoutOrder = 9
                 viewInfo.Position = UDim2.new(0.930000007, 0, 0.151999995, 0)
@@ -2028,27 +1923,7 @@ function Kavo.CreateLib(kavName, themeList)
                 viewInfo.Image = "rbxassetid://3926305904"
                 viewInfo.ImageColor3 = themeList.SchemeColor
                 viewInfo.ImageRectOffset = Vector2.new(764, 764)
-                viewInfo.ImageRectSize = Vector2.new(36, 36)
-                viewInfo.MouseButton1Click:Connect(function()
-                    if not viewDe then
-                        viewDe = true
-                        focusing = true
-                        for i,v in next, infoContainer:GetChildren() do
-                            if v ~= moreInfo then
-                                Utility:TweenObject(v, {Position = UDim2.new(0,0,2,0)}, 0.2)
-                            end
-                        end
-                        Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,0,0)}, 0.2)
-                        Utility:TweenObject(blurFrame, {BackgroundTransparency = 0.5}, 0.2)
-                        Utility:TweenObject(keybindElement, {BackgroundColor3 = themeList.ElementColor}, 0.2)
-                        wait(1.5)
-                        focusing = false
-                        Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,2,0)}, 0.2)
-                        Utility:TweenObject(blurFrame, {BackgroundTransparency = 1}, 0.2)
-                        wait(0)
-                        viewDe = false
-                    end
-                end)  
+                viewInfo.ImageRectSize = Vector2.new(36, 36)  
                                 updateSectionFrame()
                 UpdateSize()
                 local oHover = false
@@ -2291,7 +2166,6 @@ function Kavo.CreateLib(kavName, themeList)
                 UICorner.Parent = moreInfo
 
                 viewInfo.Name = "viewInfo"
-                viewInfo.Parent = colorHeader
                 viewInfo.BackgroundTransparency = 1.000
                 viewInfo.LayoutOrder = 9
                 viewInfo.Position = UDim2.new(0.930000007, 0, 0.151999995, 0)
@@ -2300,27 +2174,7 @@ function Kavo.CreateLib(kavName, themeList)
                 viewInfo.Image = "rbxassetid://3926305904"
                 viewInfo.ImageColor3 = themeList.SchemeColor
                 viewInfo.ImageRectOffset = Vector2.new(764, 764)
-                viewInfo.ImageRectSize = Vector2.new(36, 36)
-                viewInfo.MouseButton1Click:Connect(function()
-                    if not viewDe then
-                        viewDe = true
-                        focusing = true
-                        for i,v in next, infoContainer:GetChildren() do
-                            if v ~= moreInfo then
-                                Utility:TweenObject(v, {Position = UDim2.new(0,0,2,0)}, 0.2)
-                            end
-                        end
-                        Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,0,0)}, 0.2)
-                        Utility:TweenObject(blurFrame, {BackgroundTransparency = 0.5}, 0.2)
-                        Utility:TweenObject(colorElement, {BackgroundColor3 = themeList.ElementColor}, 0.2)
-                        wait(1.5)
-                        focusing = false
-                        Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,2,0)}, 0.2)
-                        Utility:TweenObject(blurFrame, {BackgroundTransparency = 1}, 0.2)
-                        wait(0)
-                        viewDe = false
-                    end
-                end)   
+                viewInfo.ImageRectSize = Vector2.new(36, 36) 
 
                 colorCurrent.Name = "colorCurrent"
                 colorCurrent.Parent = colorHeader
