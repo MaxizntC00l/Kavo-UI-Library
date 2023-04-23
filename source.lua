@@ -573,7 +573,7 @@ function Kavo.CreateLib(kavName, themeList)
                 updateSectionFrame()
                 UpdateSize()
             local Elements = {}
-            function Elements:NewButton(bname,tipINf, callback)
+            function Elements:NewButton(bname, callback)
                 showLogo = showLogo or true
                 local ButtonFunction = {}
                 tipINf = tipINf or "Tip: Clicking this nothing will happen!"
@@ -774,7 +774,7 @@ function Kavo.CreateLib(kavName, themeList)
                 return ButtonFunction
             end
 
-            function Elements:NewTextBox(tname, tTip, callback)
+            function Elements:NewTextBox(tname, callback)
                 tname = tname or "Textbox"
                 tTip = tTip or "Gets a value of Textbox"
                 callback = callback or function() end
@@ -970,7 +970,7 @@ function Kavo.CreateLib(kavName, themeList)
                 end)()
             end 
 
-                function Elements:NewToggle(tname, nTip, callback)
+                function Elements:NewToggle(tname, callback)
                     local TogFunction = {}
                     tname = tname or "Toggle"
                     nTip = nTip or "Prints Current Toggle State"
@@ -1219,7 +1219,7 @@ function Kavo.CreateLib(kavName, themeList)
                     return TogFunction
             end
 
-            function Elements:NewSlider(slidInf, slidTip, maxvalue, minvalue, callback)
+            function Elements:NewSlider(slidInf, maxvalue, minvalue, callback)
                 slidInf = slidInf or "Slider"
                 slidTip = slidTip or "Slider tip here"
                 maxvalue = maxvalue or 500
