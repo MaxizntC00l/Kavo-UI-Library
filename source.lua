@@ -10,8 +10,7 @@ local Objects = {}
 function Kavo:DraggingEnabled(frame, parent)
         
     parent = parent or frame
-    
-    -- stolen from wally or kiriot, kek
+
     local dragging = false
     local dragInput, mousePos, framePos
 
@@ -139,9 +138,11 @@ end)
 
 local LibName = tostring(math.random(1, 100))..tostring(math.random(1,50))..tostring(math.random(1, 100))
 
+local CachedPos = UDim2.new(0,0,0,0)
+local CachedSize = UDim2.new(0,0,0,0)
 function Kavo:ToggleUI()
     local thingy = game.CoreGui[LibName]
-    if thingy.Enabled then   
+    if thingy.Enabled then
         tween:Create(thingy.Main.MainHeader.close, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
             ImageTransparency = 1
         }):Play()
@@ -160,8 +161,7 @@ function Kavo:ToggleUI()
         }):Play()
         wait()
         tween:Create(thingy.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-			Size = UDim2.new(0, 525, 0, 318),
-			Position = UDim2.new(0, thingy.Main.AbsolutePosition.X + (thingy.Main.AbsoluteSize.X / 2), 0, thingy.Main.AbsolutePosition.Y + (thingy.Main.AbsoluteSize.Y / 2))
+			Size = UDim2.new(0,525,0,318)
 		}):Play()
     end
 end
