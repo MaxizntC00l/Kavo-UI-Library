@@ -142,11 +142,11 @@ local LibName = tostring(math.random(1, 100))..tostring(math.random(1,50))..tost
 function Kavo:ToggleUI()
     local thingy = game.CoreGui[LibName]
     if thingy.Enabled then   
-        game.TweenService:Create(thingy.Main.MainHeader.close, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+        tween:Create(thingy.Main.MainHeader.close, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
             ImageTransparency = 1
         }):Play()
         wait()
-        game.TweenService:Create(thingy.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+        tween:Create(thingy.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 			Size = UDim2.new(0,0,0,0),
 			Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X / 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y / 2))
 		}):Play()
@@ -155,11 +155,11 @@ function Kavo:ToggleUI()
     else
         thingy.Enabled = true
         task.wait()
-        game.TweenService:Create(thingy.Main.MainHeader.close, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+        tween:Create(thingy.Main.MainHeader.close, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
             ImageTransparency = 0
         }):Play()
         wait()
-        game.TweenService:Create(thingy.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+        tween:Create(thingy.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 			Size = UDim2.new(0, 525, 0, 318),
 			Position = UDim2.new(0, Main.AbsolutePosition.X - (Main.AbsoluteSize.X * 2), 0, Main.AbsolutePosition.Y - (Main.AbsoluteSize.Y * 2))
 		}):Play()
