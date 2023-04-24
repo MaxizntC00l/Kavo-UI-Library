@@ -138,8 +138,10 @@ end)
 
 local LibName = tostring(math.random(1, 100))..tostring(math.random(1,50))..tostring(math.random(1, 100))
 
-local CachedPos = UDim2.new(0,0,0,0)
-local CachedSize = UDim2.new(0,0,0,0)
+function Kavo:Notification()
+    --wip
+end
+
 function Kavo:ToggleUI()
     local thingy = game.CoreGui[LibName]
     if thingy.Enabled then
@@ -147,9 +149,10 @@ function Kavo:ToggleUI()
             ImageTransparency = 1
         }):Play()
         wait()
+        --im so pissed
         tween:Create(thingy.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 			Size = UDim2.new(0,0,0,0),
-			Position = UDim2.new(0, thingy.Main.AbsolutePosition.X + (thingy.Main.AbsoluteSize.X / 2), 0, thingy.Main.AbsolutePosition.Y + (thingy.Main.AbsoluteSize.Y / 2))
+			Position = UDim2.new(0.5,0,0.5,0)
 		}):Play()
         task.wait(1)
         thingy.Enabled = false
@@ -162,7 +165,7 @@ function Kavo:ToggleUI()
         wait()
         tween:Create(thingy.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 			Size = UDim2.new(0,525,0,318),
-			Position = UDim2.new(0, thingy.Main.AbsolutePosition.X - (thingy.Main.AbsoluteSize.X * 2), 0, thingy.Main.AbsolutePosition.Y - (thingy.Main.AbsoluteSize.Y * 2))
+            Position = UDim2.new(0.5,0,0.5,0)
 		}):Play()
     end
 end
