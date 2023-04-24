@@ -148,11 +148,13 @@ function Kavo:ToggleUI()
         tween:Create(thingy.Main.MainHeader.close, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
             ImageTransparency = 1
         }):Play()
+        tween:Create(thingy.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+            Position = UDim2.new(0.336503863, 0, 0.275485456, 0)
+		}):Play()
         wait()
         --im so pissed
-        tween:Create(thingy.Main, TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+        tween:Create(thingy.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 			Size = UDim2.new(0,0,0,0),
-			Position = UDim2.new(0.5,0,0.5,0)
 		}):Play()
         task.wait(1)
         thingy.Enabled = false
@@ -162,10 +164,12 @@ function Kavo:ToggleUI()
         tween:Create(thingy.Main.MainHeader.close, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
             ImageTransparency = 0
         }):Play()
+        tween:Create(thingy.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+            Position = UDim2.new(0.336503863, 0, 0.275485456, 0)
+		}):Play()
         wait()
-        tween:Create(thingy.Main, TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+        tween:Create(thingy.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 			Size = UDim2.new(0,525,0,318),
-            Position = UDim2.new(0.5,0,0.5,0)
 		}):Play()
     end
 end
