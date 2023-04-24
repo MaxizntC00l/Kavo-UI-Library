@@ -150,7 +150,7 @@ function Kavo:ToggleUI()
         }):Play()
         wait()
         --im so pissed
-        tween:Create(thingy.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+        tween:Create(thingy.Main, TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 			Size = UDim2.new(0,0,0,0),
 			Position = UDim2.new(0.5,0,0.5,0)
 		}):Play()
@@ -163,7 +163,7 @@ function Kavo:ToggleUI()
             ImageTransparency = 0
         }):Play()
         wait()
-        tween:Create(thingy.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+        tween:Create(thingy.Main, TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 			Size = UDim2.new(0,525,0,318),
             Position = UDim2.new(0.5,0,0.5,0)
 		}):Play()
